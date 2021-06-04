@@ -55,9 +55,11 @@ const InnerStyles = styled.div`
 
 const AnimationLayer = styled.div`
   ul {
+    margin-top: 0;
     transform: translateX(-20px);
     width: 100%;
-    height: 110%;
+    height: 100vh;
+    overflow: hidden;
     z-index: -50;
     display: flex;
     justify-content: space-around;
@@ -127,7 +129,7 @@ const AnimationLayer = styled.div`
     :nth-child(7) {
       animation: randomize, spin;
       animation-duration: 25s, 10s;
-      animation-timing-function: cubic-cubic-bezier(0.95, 0.05, 0.795, 0.035);
+      animation-timing-function: ease-out;
       animation-iteration-count: infinite;
       animation-delay: 11s;
       width: 100px;
@@ -150,7 +152,7 @@ const AnimationLayer = styled.div`
       background-color: #80808045;
     }
     100% {
-      transform: translateY(100vh) rotate(840deg);
+      transform: translateY(calc(100vh + 200px)) rotate(840deg);
       background-color: #80808055;
     }
   }
